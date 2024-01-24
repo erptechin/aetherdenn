@@ -4,24 +4,31 @@ import Color from "../common/Color";
 import { useStorage } from "./useStorage";
 
 interface MainContextProps {
-    labels: any,
     settings: any,
     setSettings: (values: any) => Promise<void>,
 }
 
 export const MainContext = createContext<MainContextProps>({
-    labels: {},
     settings: {},
     setSettings: () => Promise.resolve(),
 })
 
 export const MainProvider: FC<PropsWithChildren> = ({ children }) => {
     const { getItem, setItem, removeItem } = useStorage();
-    const [labels] = useState<any>({ })
     const [settings, setSettings] = useState({})
+    useEffect(() => {
+        getItem('settings').then((value) => {
+            setSettings(value ? value : { ...Color })
+        });
+    }, []);
+
+    const handleSettings = async (value: any) => {
+        setItem('settings', { ...value, ...Color });
+        return setSettings({ ...value, ...Color })
+    }
 
     return (
-        <MainContext.Provider value={{ labels, settings, setSettings: handleSettings, isLoading, token, user, updateUser, login: loginPress, logout }}>
+        <MainContext.Provider value={{ settings, setSettings: handleSettings }}>
             {children}
         </MainContext.Provider>
     )

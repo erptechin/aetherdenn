@@ -2,25 +2,15 @@
 import React, { useContext, useEffect } from "react";
 import Toast from "react-native-toast-message";
 import Navigation from "./Navigation";
-import Notification from "./Notification";
 import ToastConfig from "./utility/toast";
 
 import { config as defaultConfig, createConfig } from '@gluestack-ui/themed';
 import { GluestackUIProvider } from '@gluestack-ui/themed';
 import { View, StatusBar } from "react-native";
 import { MainContext } from './contexts/mainProvider'
-import LottieView from "lottie-react-native";
-import { useFetchSingleDocType } from './contexts';
-
-const resource = "Hospital Settings"
 
 const Main = () => {
-  const { settings, setSettings } = useContext(MainContext)
-  const { data } = useFetchSingleDocType({ resource, whitelist: true });
-
-  useEffect(() => {
-    setSettings(data);
-  }, [data]);
+  const { settings } = useContext(MainContext)
 
   const config = createConfig({
     ...defaultConfig.theme,
@@ -57,24 +47,17 @@ const Main = () => {
   });
 
   return (
-    <View style={{flex:1}}>
-      {data ?
-        <GluestackUIProvider config={config}>
-          <StatusBar
-            animated={true}
-            backgroundColor={settings?.header_color}
-            barStyle={"light-content"}
-            translucent
-            hidden={false}
-          />
-          <Navigation />
-        </GluestackUIProvider> : <View style={{ flex: 1, alignItems: "center" }}><LottieView
-          source={require("./images/loader.json")}
-          style={{ width: "80%", height: "80%", marginTop: "20%" }}
-          autoPlay
-          loop
-        /></View>}
-      <Notification />
+    <View style={{ flex: 1 }}>
+      <GluestackUIProvider config={config}>
+        <StatusBar
+          animated={true}
+          backgroundColor={settings?.header_color}
+          barStyle={"light-content"}
+          translucent
+          hidden={false}
+        />
+        <Navigation />
+      </GluestackUIProvider>
       <Toast config={ToastConfig} />
     </View>
   );
