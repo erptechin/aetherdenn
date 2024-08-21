@@ -70,6 +70,47 @@ def enableProguardInReleaseBuilds = false
 def jscFlavor = 'org.webkit:android-jsc:+'
 
 android {
+
+     project.ext.vectoricons = [
+        iconFontNames: [
+        'AntDesign.ttf',
+		'Entypo.ttf',
+		'EvilIcons.ttf',
+		'Feather.ttf',
+		'FontAwesome.ttf',
+		'Fontisto.ttf',
+		'Foundation.ttf',
+		'Ionicons.ttf',
+		'MaterialCommunityIcons.ttf',
+		'Octicons.ttf',
+		'SimpleLineIcons.ttf',
+		'Zocial.ttf',
+        'TTHoves-Black.ttf',
+		'TTHoves-BlackItalic.ttf',
+		'TTHoves-Bold.ttf',
+		'TTHoves-BoldItalic.ttf',
+		'TTHoves-DemiBold.ttf',
+		'TTHoves-DemiBoldItalic.ttf',
+		'TTHoves-ExtraBold.ttf',
+		'TTHoves-ExtraBoldItalic.ttf',
+		'TTHoves-ExtraLight.ttf',
+		'TTHoves-ExtraLightItalic.ttf',
+		'TTHoves-Hairline.ttf',
+		'TTHoves-HairlineItalic.ttf',
+		'TTHoves-Italic.ttf',
+		'TTHoves-Light.ttf',
+		'TTHoves-LightItalic.ttf',
+		'TTHoves-Medium.ttf',
+		'TTHoves-MediumItalic.ttf',
+		'TTHoves-Regular.ttf',
+		'TTHoves-Thin.ttf',
+		'TTHoves-ThinItalic.ttf'
+        ] 
+        // Add more font files if needed
+    ]
+    apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
+
+
     ndkVersion rootProject.ext.ndkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion

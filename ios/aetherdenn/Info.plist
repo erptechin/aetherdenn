@@ -34,6 +34,41 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>AntDesign.ttf</string>
+		<string>Entypo.ttf</string>
+		<string>EvilIcons.ttf</string>
+		<string>Feather.ttf</string>
+		<string>FontAwesome.ttf</string>
+		<string>Fontisto.ttf</string>
+		<string>Foundation.ttf</string>
+		<string>Ionicons.ttf</string>
+		<string>MaterialCommunityIcons.ttf</string>
+		<string>Octicons.ttf</string>
+		<string>SimpleLineIcons.ttf</string>
+		<string>Zocial.ttf</string>
+		<string>TTHoves-Black.ttf</string>
+		<string>TTHoves-BlackItalic.ttf</string>
+		<string>TTHoves-Bold.ttf</string>
+		<string>TTHoves-BoldItalic.ttf</string>
+		<string>TTHoves-DemiBold.ttf</string>
+		<string>TTHoves-DemiBoldItalic.ttf</string>
+		<string>TTHoves-ExtraBold.ttf</string>
+		<string>TTHoves-ExtraBoldItalic.ttf</string>
+		<string>TTHoves-ExtraLight.ttf</string>
+		<string>TTHoves-ExtraLightItalic.ttf</string>
+		<string>TTHoves-Hairline.ttf</string>
+		<string>TTHoves-HairlineItalic.ttf</string>
+		<string>TTHoves-Italic.ttf</string>
+		<string>TTHoves-Light.ttf</string>
+		<string>TTHoves-LightItalic.ttf</string>
+		<string>TTHoves-Medium.ttf</string>
+		<string>TTHoves-MediumItalic.ttf</string>
+		<string>TTHoves-Regular.ttf</string>
+		<string>TTHoves-Thin.ttf</string>
+		<string>TTHoves-ThinItalic.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
