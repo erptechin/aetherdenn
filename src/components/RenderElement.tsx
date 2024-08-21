@@ -73,7 +73,7 @@ export function Mainheader({ base, right }: any) {
     }}>
       <View style={{ paddingLeft: 10, paddingTop: 5 }}><Entypo name="chevron-left" size={30} color={Color.white} /></View>
       <View><Image
-        source={{ uri:" Config.REACT_APP_BASE_URL" + settings?.site_logo }}
+        source={{ uri: " Config.REACT_APP_BASE_URL" + settings?.site_logo }}
         style={{ height: 35, width: 35 }}
       /></View>
       <View style={{ paddingRight: 10, paddingTop: 5 }}><Text style={{ color: settings.header_color }}>...</Text></View>
@@ -106,6 +106,7 @@ export function GradientWapper({
 }
 
 export function MainWapper({
+  style = {},
   refreshing = false,
   onRefresh = null,
   children,
@@ -113,7 +114,7 @@ export function MainWapper({
   return (
     <Box
       bg="$white"
-      style={{ flex: 1 }}
+      style={[{ flex: 1 }, style]}
       borderTopLeftRadius={20}
       borderTopRightRadius={20}
       p={10}
@@ -130,11 +131,11 @@ export function MainWapper({
   );
 }
 
-export function FormWapper({ dark = false, children }: any) {
+export function FormWapper({ style = {}, dark = false, children }: any) {
   return (
     <Box
       bg="$white"
-      style={{ flex: 1 }}
+      style={[{ flex: 1 }, style]}
       borderTopLeftRadius={20}
       borderTopRightRadius={20}
       pt={20}

@@ -1,29 +1,18 @@
 import React, { useContext } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MainContext } from './contexts/mainProvider'
-import { TabBar } from "./components";
 import {
   Splash,
-  AddProduct,
-  Profile
+  Login,
+  Home,
+  Locations,
+  MultiTag,
+  SingleTag,
+  Update
 } from "./screens";
 
 const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
-
-function BottomTabs() {
-  return (
-    <Tab.Navigator
-      screenOptions={{ headerShown: true }}
-      tabBar={(props: any) => <TabBar {...props} />}
-    >
-      <Tab.Screen name="Product" component={AddProduct} />
-      <Tab.Screen name="Bucket" component={Profile} />
-    </Tab.Navigator>
-  );
-}
 
 function MainStack() {
   return (
@@ -33,7 +22,12 @@ function MainStack() {
       }}
     >
       <Stack.Screen name="Splash" component={Splash} />
-      <Stack.Screen name="Home" component={BottomTabs} />
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Locations" component={Locations} />
+      <Stack.Screen name="MultiTag" component={MultiTag} />
+      <Stack.Screen name="SingleTag" component={SingleTag} />
+      <Stack.Screen name="Update" component={Update} />
     </Stack.Navigator>
   );
 }

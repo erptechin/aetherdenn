@@ -9,7 +9,7 @@ export const Splash = ({ navigation }: any) => {
 
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate('Home', { screen: "Bucket" })
+      navigation.navigate('Login')
     }, 2000);
   }, []);
 

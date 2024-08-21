@@ -74,11 +74,11 @@ export function InputBox(props: any) {
       <Field name={props.name}>
         {({ field, form, meta }: any) => {
           return <>
-            <View flexDirection={"row"} justifyContent={"space-between"} alignItems={"center"}>
+            {props.lable && <View flexDirection={"row"} justifyContent={"space-between"} alignItems={"center"}>
               <Text size="md" m="$1">
-                {props.placeholder} <Text color="$red">{form?.errors && "*"}</Text>
+                {props.lable} <Text color="$red">{form?.errors && "*"}</Text>
               </Text>
-            </View>
+            </View>}
             <Input variant="rounded" size="md" borderColor={
               form?.errors[props.name] && form?.touched[props.name]
                 ? '$red300'
@@ -146,7 +146,6 @@ export function PasswordBox(props: any) {
     </View>
   );
 }
-
 
 export function TextAreaBox(props: any) {
   return (
